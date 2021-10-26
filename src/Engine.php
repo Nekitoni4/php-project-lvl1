@@ -5,7 +5,7 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function startGame($questionAnswerCallback, $name)
+function startGame(callable $questionAnswerCallback, string $name): void
 {
     $correctCount = 0;
 
@@ -20,7 +20,7 @@ function startGame($questionAnswerCallback, $name)
         line("Question: $question");
         $userAnswer = prompt("Your answer");
 
-        if (!strcmp($userAnswer, $correctAnswer)) {
+        if (strcmp($userAnswer, $correctAnswer) == 0) {
             $correctCount += 1;
             line('Correct!');
         } else {
