@@ -21,10 +21,10 @@ function generateProgression(): array
 }
 
 
-function progressionPlay($name)
+function progressionPlay(string $name): void
 {
     line('What number is missing in the progression?');
-    startGame(function () {
+    startGame(function (): array {
         $resultProgression = generateProgression();
         $targetIndex = rand(0, count($resultProgression) - 1);
         $answer = $resultProgression[$targetIndex];

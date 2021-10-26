@@ -5,11 +5,11 @@ namespace Brain\Games\Calc;
 use function Brain\Games\Engine\startGame;
 use function cli\line;
 
-function calcPlay($name)
+function calcPlay(string $name): void
 {
     line('What is the result of the expression?');
 
-    startGame(function () {
+    startGame(function (): array {
         $firstNumber = rand(1, 50);
         $secondNumber = rand(1, 50);
         $operations = [

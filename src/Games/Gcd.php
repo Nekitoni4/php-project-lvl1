@@ -5,7 +5,7 @@ namespace Brain\Games\Gcd;
 use function Brain\Games\Engine\startGame;
 use function cli\line;
 
-function calculateGcd($firstNumber, $secondNumber)
+function calculateGcd(int $firstNumber, int $secondNumber): ?int
 {
     $result = null;
     $min = min($firstNumber, $secondNumber);
@@ -20,11 +20,11 @@ function calculateGcd($firstNumber, $secondNumber)
 }
 
 
-function gcdPlay($name)
+function gcdPlay(string $name): void
 {
     line('Find the greatest common divisor of given numbers.');
 
-    startGame(function () {
+    startGame(function (): array {
         $firstNumber = rand(1, 50);
         $secondNumber = rand(1, 50);
         $question = "$firstNumber $secondNumber";
